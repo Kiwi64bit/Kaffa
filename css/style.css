@@ -1,0 +1,191 @@
+/* carousel image darken */
+.carousel .carousel-inner img {
+    filter: brightness(40%);
+}
+
+/* overwrite carousel caption */
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: initial;
+    bottom: initial;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    transform: translate(-50%, -50%);
+    color: var(--bs-carousel-caption-color);
+    text-align: initial;
+}
+
+/* overwrite carousel indicators */
+.carousel-indicators [data-bs-target]:not(.active) {
+    opacity: 0.3;
+}
+
+/* carousel caption animation */
+.carousel .carousel-inner .carousel-item .carousel-caption > * {
+    transform: translateY(-2rem);
+    opacity: 0;
+    transition: all 1s ease calc(var(--delay) * 200ms);
+}
+/* carousel-item active */
+.carousel .carousel-inner .carousel-item.active .carousel-caption > * {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* flip card */
+.flip-card {
+    width: min(230px, 100%);
+    height: min(390px, 100%);
+    border-radius: 0.5rem;
+    position: relative;
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.flip-card .back-face,
+.flip-card .front-face {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: inherit;
+    backface-visibility: hidden;
+    transition: all 2s;
+}
+
+.flip-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.flip-card .back-face .image {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+}
+
+.flip-card .front-face {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.flip-card .back-face {
+    background-color: var(--bg-color);
+}
+
+.flip-card .back-face .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0.5rem;
+}
+
+.flip-card .back-face .text p {
+    flex-grow: 1;
+}
+
+.flip-card .front-face {
+    transform: rotateY(0deg);
+}
+
+.flip-card .back-face {
+    transform: rotateY(180deg);
+}
+
+.flip-card:hover .front-face {
+    transform: rotateY(180deg);
+}
+
+.flip-card:hover .back-face {
+    transform: rotateY(0deg);
+}
+
+/* Services section */
+#Services {
+    background: linear-gradient(hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0.7)), url(../images/random/coffee_beans.jpg) center/cover no-repeat fixed;
+}
+
+#Services .floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+
+/* Menu section */
+/* menu drink-card */
+#Menu .drink-card {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background-color: #fefeff;
+    transform: scale(0);
+    transition: transform 1s;
+}
+
+#Menu .tab-content .tab-pane.show .drink-card {
+    transform: scale(1);
+}
+
+#Menu .drink-card img {
+    transform: scale(0.8);
+    transition: transform 1s;
+}
+
+#Menu .drink-card:hover img {
+    transform: scale(1);
+}
+
+#Menu .drink-card .info {
+    position: absolute;
+    max-width: 90%;
+    background-color: var(--main-green);
+    background-image: url(../images/random/leaves_pattern.png);
+    padding: 0.25rem 0.5rem;
+    transform: translateX(-100%);
+    margin: 0;
+    transition: transform 1s;
+}
+
+#Menu .drink-card .info.name {
+    top: 5%;
+}
+
+#Menu .drink-card .info.price {
+    bottom: 5%;
+}
+
+#Menu .drink-card:hover .info {
+    transform: translate(0);
+}
+
+/* CoffeeBeans section */
+#CoffeeBeans {
+    background: linear-gradient(hsla(0, 0%, 0%, 0.4), hsla(0, 0%, 0%, 0.4)), url(../images/random/ice_drinks.jpg) center/cover no-repeat fixed;
+}
+
+/* BookNow section */
+#Book {
+    background-image: url(../images/random/black_leaves_pattern.png);
+}
+
+#Book .form {
+    background-image: url(../images/random/leaves_pattern.png);
+    background-color: var(--main-green);
+}
+
+#Book .coffee-girl {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+}

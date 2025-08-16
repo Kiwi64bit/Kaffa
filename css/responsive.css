@@ -1,0 +1,9 @@
+@media (min-width: 992px) {
+    .bg-lg-transparent {
+        background-color: transparent !important;
+    }
+
+    .bg-lg-translateY-2rem {
+        transform: translateY(2rem);
+    }
+}
